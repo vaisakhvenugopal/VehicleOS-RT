@@ -2,9 +2,10 @@
 #include "platform/sdk/vo_sdk.h"
 #include "vss_registry.h"
 #include <zephyr/kernel.h>
-#include <zephyr/console/console.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/logging/log.h>
+#include <zephyr/device.h>
+#include <zephyr/drivers/uart.h>
 #include <ctype.h>
 #include <string.h>
 #include <strings.h>
@@ -164,21 +165,59 @@ static int handle_get(const char *path)
     return 0;
 }
 
+static int uart_readline(const struct device *uart, char *buf, size_t len)
+{
+    size_t idx = 0;
+
+    while (1) {
+        uint8_t ch;
+        if (uart_poll_in(uart, &ch) == 0) {
+            if (ch == '\r' || ch == '\n') {
+                uart_poll_out(uart, '\r');
+                uart_poll_out(uart, '\n');
+                buf[idx] = '\0';
+                return (int)idx;
+            }
+            if (ch == 0x7f || ch == '\b') {
+                if (idx > 0) {
+                    idx--;
+                    uart_poll_out(uart, '\b');
+                    uart_poll_out(uart, ' ');
+                    uart_poll_out(uart, '\b');
+                }
+                continue;
+            }
+            if (idx + 1 < len) {
+                buf[idx++] = (char)ch;
+                uart_poll_out(uart, ch);
+            }
+        } else {
+            k_sleep(K_MSEC(10));
+        }
+    }
+}
+
 static void cli_thread(void *a, void *b, void *c)
 {
     ARG_UNUSED(a);
     ARG_UNUSED(b);
     ARG_UNUSED(c);
 
-    console_getline_init();
+    const struct device *uart = DEVICE_DT_GET(DT_CHOSEN(zephyr_console));
+    if (!device_is_ready(uart)) {
+        printk("UART console not ready\n");
+        return;
+    }
+
     print_help();
 
     while (1) {
         printk("> ");
-        char *line = console_getline();
-        if (!line) {
+        char line_buf[160];
+        if (uart_readline(uart, line_buf, sizeof(line_buf)) <= 0) {
             continue;
         }
+        char *line = line_buf;
 
         while (isspace((unsigned char)*line)) {
             line++;
