@@ -21,7 +21,7 @@ Assumptions:
 ## 1. Container environment
 
 ### 1.1 Dockerfile (recommended baseline)
-Create `docker/Dockerfile`:
+Use the provided `docker/Dockerfile`. It installs `qemu-system-arm` and the Zephyr SDK appropriate for the container architecture (amd64 or arm64).
 
 ```dockerfile
 FROM ubuntu:22.04
@@ -33,10 +33,26 @@ RUN apt-get update && apt-get install -y \
     ccache dfu-util device-tree-compiler wget \
     python3 python3-pip python3-venv python3-dev \
     xz-utils file make gcc g++ \
-    qemu-system-x86 \
+    qemu-system-arm \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir west pyelftools pyyaml
+
+ENV ZEPHYR_SDK_VERSION=0.16.8
+ENV ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
+
+RUN arch="$(dpkg --print-architecture)" && \
+    case "${arch}" in \
+        amd64) sdk_arch="x86_64" ;; \
+        arm64) sdk_arch="aarch64" ;; \
+        *) echo "Unsupported architecture: ${arch}" && exit 1 ;; \
+    esac && \
+    wget -q https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZEPHYR_SDK_VERSION}/zephyr-sdk-${ZEPHYR_SDK_VERSION}_linux-${sdk_arch}.tar.xz -O /tmp/zephyr-sdk.tar.xz && \
+    tar -xf /tmp/zephyr-sdk.tar.xz -C /opt && \
+    rm -rf ${ZEPHYR_SDK_INSTALL_DIR} && \
+    mv /opt/zephyr-sdk-${ZEPHYR_SDK_VERSION} ${ZEPHYR_SDK_INSTALL_DIR} && \
+    ${ZEPHYR_SDK_INSTALL_DIR}/setup.sh -t all -h -c && \
+    rm -f /tmp/zephyr-sdk.tar.xz
 
 # Optional: tools for formatting/linting
 RUN pip3 install --no-cache-dir ruff==0.6.9 yamllint==1.35.1
@@ -44,7 +60,7 @@ RUN pip3 install --no-cache-dir ruff==0.6.9 yamllint==1.35.1
 WORKDIR /work
 ```
 
-Create `docker/run.sh`:
+Use `docker/run.sh` (already in repo):
 
 ```bash
 #!/usr/bin/env bash
@@ -246,7 +262,7 @@ west test -T app/vehicleos_rt_mvp/tests
 ## 9. Common failure modes (agent troubleshooting)
 - Missing `west.yml` or wrong module refs → `west update` fails
 - Codegen not run → missing `generated/signals/*`
-- QEMU board mismatch → ensure `qemu_x86` exists in installed Zephyr
+- QEMU board mismatch → ensure `qemu_cortex_m3` exists in installed Zephyr
 - Path mismatches between schema and runtime → validate schema with generator
 
 ---

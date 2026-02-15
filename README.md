@@ -1,16 +1,15 @@
 # VehicleOS
 
-VehicleOS is a Zephyr-based real-time platform prototype that uses COVESA VSS semantics as the API contract, Z-bus for in-node messaging, and a lightweight gateway layer for inter-node transport. The core MVP lives in the `VehicleOS-RT` subdirectory and targets QEMU for repeatable local runs.
+VehicleOS is a Zephyr-based real-time platform prototype that uses COVESA VSS semantics as the API contract, Z-bus for in-node messaging, and a lightweight gateway layer for inter-node transport. The core MVP lives at this repository root and targets QEMU for repeatable local runs.
 
 This README focuses on getting the MVP app built and running (ARM QEMU only), how to interact with the CLI, and what “success” looks like in the console output.
 
 ## Repository layout
 
-- `VehicleOS-RT/`: Main Zephyr app, build scripts, and architecture docs
-- `VehicleOS-RT/app/vehicleos_rt_mvp/`: MVP application source
-- `VehicleOS-RT/scripts/`: Build/run helpers
-- `VehicleOS-RT/domains/`: VSS domain schemas and lambdas
-- `VehicleOS-RT/generated/`: Codegen outputs (signal registry)
+- `app/vehicleos_rt_mvp/`: MVP application source
+- `scripts/`: Build/run helpers
+- `domains/`: VSS domain schemas and lambdas
+- `generated/`: Codegen outputs (signal registry)
 - `zephyr/`, `modules/`, `tools/`, `bootloader/`: West-managed dependencies and tooling
 
 ## Quick start (recommended: container + ARM QEMU)
@@ -20,10 +19,10 @@ These steps match the repo’s scripts and are the most deterministic path on ma
 1. Build the container
 
 ```bash
-cd VehicleOS-RT
-
 docker build -t vehicleos-rt:dev -f docker/Dockerfile docker
 ```
+
+The Dockerfile auto-selects the correct Zephyr SDK for the container architecture (amd64 or arm64).
 
 2. Enter the container
 
@@ -109,11 +108,11 @@ The demo runner `scripts/run_demo.sh` currently prints guidance only. The real i
 
 ## Troubleshooting
 
-- If `west update` fails, confirm `VehicleOS-RT/west.yml` is present and you ran `west init -l .` from `VehicleOS-RT/`.
+- If `west update` fails, confirm `west.yml` is present and you ran `west init -l .` from the repo root.
 - If build fails due to missing signal headers, re-run `bash scripts/gen_signals.sh`.
 - If QEMU fails to run, ensure you built for `qemu_cortex_m3` as used in `scripts/build_qemu.sh` and that the Docker image was rebuilt after any Dockerfile changes.
 
 ## Docs
 
-- Architecture overview: `VehicleOS-RT/docs/01_architecture.md`
-- MVP build steps: `VehicleOS-RT/docs/03_mvp_build_steps_agent.md`
+- Architecture overview: `docs/01_architecture.md`
+- MVP build steps: `docs/03_mvp_build_steps_agent.md`

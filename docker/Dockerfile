@@ -15,7 +15,13 @@ RUN pip3 install --no-cache-dir west pyelftools pyyaml
 ENV ZEPHYR_SDK_VERSION=0.16.8
 ENV ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 
-RUN wget -q https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZEPHYR_SDK_VERSION}/zephyr-sdk-${ZEPHYR_SDK_VERSION}_linux-aarch64.tar.xz -O /tmp/zephyr-sdk.tar.xz && \
+RUN arch="$(dpkg --print-architecture)" && \
+    case "${arch}" in \
+        amd64) sdk_arch="x86_64" ;; \
+        arm64) sdk_arch="aarch64" ;; \
+        *) echo "Unsupported architecture: ${arch}" && exit 1 ;; \
+    esac && \
+    wget -q https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZEPHYR_SDK_VERSION}/zephyr-sdk-${ZEPHYR_SDK_VERSION}_linux-${sdk_arch}.tar.xz -O /tmp/zephyr-sdk.tar.xz && \
     tar -xf /tmp/zephyr-sdk.tar.xz -C /opt && \
     rm -rf ${ZEPHYR_SDK_INSTALL_DIR} && \
     mv /opt/zephyr-sdk-${ZEPHYR_SDK_VERSION} ${ZEPHYR_SDK_INSTALL_DIR} && \
