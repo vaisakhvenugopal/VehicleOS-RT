@@ -20,7 +20,7 @@ These steps match the repo’s scripts and are the most deterministic path on ma
 1. Build the container
 
 ```bash
-cd /Users/vv/Documents/CODE/VehicleOS/VehicleOS-RT
+cd VehicleOS-RT
 
 docker build -t vehicleos-rt:dev -f docker/Dockerfile docker
 ```
