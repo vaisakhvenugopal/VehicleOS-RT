@@ -13,7 +13,7 @@
 set(SNIPPET_NAMES "cdc-acm-console" "nordic-flpr" "nordic-flpr-xip" "nordic-ppr" "nordic-ppr-xip" "nus-console" "ram-console" "rtt-console" "xen_dom0")
 # The paths to all the snippet.yml files. One snippet
 # can have multiple snippet.yml files.
-set(SNIPPET_PATHS "/work/zephyr/snippets/cdc-acm-console/snippet.yml" "/work/zephyr/snippets/nordic-flpr-xip/snippet.yml" "/work/zephyr/snippets/nordic-flpr/snippet.yml" "/work/zephyr/snippets/nordic-ppr-xip/snippet.yml" "/work/zephyr/snippets/nordic-ppr/snippet.yml" "/work/zephyr/snippets/nus-console/snippet.yml" "/work/zephyr/snippets/ram-console/snippet.yml" "/work/zephyr/snippets/rtt-console/snippet.yml" "/work/zephyr/snippets/xen_dom0/snippet.yml")
+set(SNIPPET_PATHS "/zephyr/snippets/cdc-acm-console/snippet.yml" "/zephyr/snippets/nordic-flpr-xip/snippet.yml" "/zephyr/snippets/nordic-flpr/snippet.yml" "/zephyr/snippets/nordic-ppr-xip/snippet.yml" "/zephyr/snippets/nordic-ppr/snippet.yml" "/zephyr/snippets/nus-console/snippet.yml" "/zephyr/snippets/ram-console/snippet.yml" "/zephyr/snippets/rtt-console/snippet.yml" "/zephyr/snippets/xen_dom0/snippet.yml")
 
 # Create variable scope for snippets build variables
 zephyr_create_scope(snippets)

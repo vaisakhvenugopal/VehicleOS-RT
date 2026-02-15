@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/lib/posix
+# Install script for directory: /zephyr/lib/posix
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/zephyr/lib/posix/options/cmake_install.cmake")
+  include("/work/build/zephyr/lib/posix/options/cmake_install.cmake")
 endif()
 

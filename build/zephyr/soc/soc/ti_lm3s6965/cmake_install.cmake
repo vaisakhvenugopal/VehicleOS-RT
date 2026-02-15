@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/soc/ti/lm3s6965
+# Install script for directory: /zephyr/soc/ti/lm3s6965
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

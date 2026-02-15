@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/xtensa
+# Install script for directory: /modules/hal/xtensa
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

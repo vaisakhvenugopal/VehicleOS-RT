@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/quicklogic
+# Install script for directory: /modules/hal/quicklogic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

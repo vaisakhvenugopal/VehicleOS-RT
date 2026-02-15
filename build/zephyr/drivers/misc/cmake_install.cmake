@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/drivers/misc
+# Install script for directory: /zephyr/drivers/misc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/lib/libc
+# Install script for directory: /zephyr/lib/libc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/zephyr/lib/libc/picolibc/cmake_install.cmake")
+  include("/work/build/zephyr/lib/libc/picolibc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/zephyr/lib/libc/common/cmake_install.cmake")
+  include("/work/build/zephyr/lib/libc/common/cmake_install.cmake")
 endif()
 

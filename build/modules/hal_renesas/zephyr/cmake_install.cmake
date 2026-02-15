@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/renesas/zephyr
+# Install script for directory: /modules/hal/renesas/zephyr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/cmsis-dsp
+# Install script for directory: /zephyr/modules/cmsis-dsp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

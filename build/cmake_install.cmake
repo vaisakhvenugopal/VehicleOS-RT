@@ -1,4 +1,4 @@
-# Install script for directory: /work/VehicleOS-RT/app/vehicleos_rt_mvp
+# Install script for directory: /work/app/vehicleos_rt_mvp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/zephyr/cmake_install.cmake")
+  include("/work/build/zephyr/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/work/VehicleOS-RT/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/work/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/cmsis
+# Install script for directory: /zephyr/modules/cmsis
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/modules/cmsis/cmsis/cmake_install.cmake")
+  include("/work/build/modules/cmsis/cmsis/cmake_install.cmake")
 endif()
 

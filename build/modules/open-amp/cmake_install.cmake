@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/lib/open-amp
+# Install script for directory: /modules/lib/open-amp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

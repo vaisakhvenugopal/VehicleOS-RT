@@ -6,11 +6,11 @@
 # and/or the west manifest file.
 #
 # See the Modules guide for more information.
-"DTS_ROOT":"/work/modules/hal/adi"
-"DTS_ROOT":"/work/modules/hal/atmel"
-"DTS_ROOT":"/work/modules/hal/espressif"
-"DTS_ROOT":"/work/modules/hal/gigadevice"
-"DTS_ROOT":"/work/modules/hal/microchip"
-"DTS_ROOT":"/work/modules/hal/nuvoton"
-"DTS_ROOT":"/work/modules/hal/nxp"
-"DTS_ROOT":"/work/modules/hal/stm32"
+"DTS_ROOT":"/modules/hal/adi"
+"DTS_ROOT":"/modules/hal/atmel"
+"DTS_ROOT":"/modules/hal/espressif"
+"DTS_ROOT":"/modules/hal/gigadevice"
+"DTS_ROOT":"/modules/hal/microchip"
+"DTS_ROOT":"/modules/hal/nuvoton"
+"DTS_ROOT":"/modules/hal/nxp"
+"DTS_ROOT":"/modules/hal/stm32"

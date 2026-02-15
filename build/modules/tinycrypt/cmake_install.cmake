@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/crypto/tinycrypt
+# Install script for directory: /modules/crypto/tinycrypt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

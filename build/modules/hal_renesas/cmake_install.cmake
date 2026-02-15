@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/renesas
+# Install script for directory: /modules/hal/renesas
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/modules/hal_renesas/zephyr/cmake_install.cmake")
+  include("/work/build/modules/hal_renesas/zephyr/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/work/VehicleOS-RT/build/modules/hal_renesas/drivers/cmake_install.cmake")
+  include("/work/build/modules/hal_renesas/drivers/cmake_install.cmake")
 endif()
 

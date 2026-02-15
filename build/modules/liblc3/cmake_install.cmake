@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/liblc3
+# Install script for directory: /zephyr/modules/liblc3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

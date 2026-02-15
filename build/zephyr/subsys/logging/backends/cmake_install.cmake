@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/subsys/logging/backends
+# Install script for directory: /zephyr/subsys/logging/backends
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/subsys/storage
+# Install script for directory: /zephyr/subsys/storage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

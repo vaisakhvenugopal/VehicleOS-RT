@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/lib/heap
+# Install script for directory: /zephyr/lib/heap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

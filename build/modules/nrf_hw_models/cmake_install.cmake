@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/bsim_hw_models/nrf_hw_models
+# Install script for directory: /modules/bsim_hw_models/nrf_hw_models
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

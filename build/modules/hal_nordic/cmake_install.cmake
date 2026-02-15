@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/hal_nordic
+# Install script for directory: /zephyr/modules/hal_nordic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

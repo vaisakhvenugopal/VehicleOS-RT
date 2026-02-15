@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/adi
+# Install script for directory: /modules/hal/adi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

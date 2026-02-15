@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/lib/hash
+# Install script for directory: /zephyr/lib/hash
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/subsys/portability
+# Install script for directory: /zephyr/subsys/portability
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

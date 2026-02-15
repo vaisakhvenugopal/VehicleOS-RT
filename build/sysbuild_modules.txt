@@ -1,1 +1,1 @@
-"mcuboot":"/work/bootloader/mcuboot":"/work/bootloader/mcuboot/boot/zephyr/sysbuild"
+"mcuboot":"/bootloader/mcuboot":"/bootloader/mcuboot/boot/zephyr/sysbuild"

@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/telink
+# Install script for directory: /modules/hal/telink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

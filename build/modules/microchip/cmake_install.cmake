@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/microchip
+# Install script for directory: /modules/hal/microchip
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

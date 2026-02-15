@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/ti/simplelink/source/ti/devices
+# Install script for directory: /modules/hal/ti/simplelink/source/ti/devices
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

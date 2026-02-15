@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/lib/os
+# Install script for directory: /zephyr/lib/os
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

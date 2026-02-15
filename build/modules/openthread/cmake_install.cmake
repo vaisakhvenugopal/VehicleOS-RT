@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/openthread
+# Install script for directory: /zephyr/modules/openthread
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

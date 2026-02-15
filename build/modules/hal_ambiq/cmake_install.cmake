@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/ambiq
+# Install script for directory: /modules/hal/ambiq
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

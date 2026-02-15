@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/intel/zephyr
+# Install script for directory: /modules/hal/intel/zephyr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/renesas/drivers
+# Install script for directory: /modules/hal/renesas/drivers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

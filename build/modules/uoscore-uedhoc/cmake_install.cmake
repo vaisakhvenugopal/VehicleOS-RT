@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/uoscore-uedhoc
+# Install script for directory: /zephyr/modules/uoscore-uedhoc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

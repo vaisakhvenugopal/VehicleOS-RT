@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/hal_rpi_pico
+# Install script for directory: /zephyr/modules/hal_rpi_pico
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

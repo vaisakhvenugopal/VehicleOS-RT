@@ -1,4 +1,4 @@
-# Install script for directory: /work/zephyr/modules/cmsis-nn
+# Install script for directory: /zephyr/modules/cmsis-nn
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

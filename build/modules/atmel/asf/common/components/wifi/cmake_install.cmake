@@ -1,4 +1,4 @@
-# Install script for directory: /work/modules/hal/atmel/asf/common/components/wifi
+# Install script for directory: /modules/hal/atmel/asf/common/components/wifi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
