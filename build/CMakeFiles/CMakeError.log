@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test check_C__Wl__N failed with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_9e96f && [1/2] Building C object CMakeFiles/cmTC_9e96f.dir/src.c.obj
+[2/2] Linking C executable cmTC_9e96f
+FAILED: cmTC_9e96f 
+: && /usr/bin/gcc -Wl,-N  CMakeFiles/cmTC_9e96f.dir/src.c.obj -o cmTC_9e96f   && :
+/usr/bin/ld: cannot find -lgcc_s: No such file or directory
+/usr/bin/ld: cannot find -lgcc_s: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_mpreferred_stack_boundary_2_C_ failed with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b1b31 && [1/2] Building C object CMakeFiles/cmTC_b1b31.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_b1b31.dir/src.c.obj 
+/usr/bin/gcc -Dcheck_mpreferred_stack_boundary_2_C_  -mpreferred-stack-boundary=2 -o CMakeFiles/cmTC_b1b31.dir/src.c.obj -c /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp/src.c
+gcc: error: unrecognized command-line option '-mpreferred-stack-boundary=2'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_mno_mmx_C_ failed with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_0a8a1 && [1/2] Building C object CMakeFiles/cmTC_0a8a1.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_0a8a1.dir/src.c.obj 
+/usr/bin/gcc -Dcheck_mno_mmx_C_  -mno-mmx -o CMakeFiles/cmTC_0a8a1.dir/src.c.obj -c /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp/src.c
+gcc: error: unrecognized command-line option '-mno-mmx'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_mno_sse_C_ failed with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_84367 && [1/2] Building C object CMakeFiles/cmTC_84367.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_84367.dir/src.c.obj 
+/usr/bin/gcc -Dcheck_mno_sse_C_  -mno-sse -o CMakeFiles/cmTC_84367.dir/src.c.obj -c /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp/src.c
+gcc: error: unrecognized command-line option '-mno-sse'; did you mean '-fno-dse'?
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the include file xtensa/config/core-isa.h exists failed with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3a21d && [1/2] Building C object CMakeFiles/cmTC_3a21d.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_3a21d.dir/CheckIncludeFile.c.obj 
+/usr/bin/gcc    -o CMakeFiles/cmTC_3a21d.dir/CheckIncludeFile.c.obj -c /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/work/VehicleOS-RT/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: xtensa/config/core-isa.h: No such file or directory
+    1 | #include <xtensa/config/core-isa.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+

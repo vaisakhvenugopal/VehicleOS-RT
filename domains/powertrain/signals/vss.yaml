@@ -1,0 +1,28 @@
+signals:
+  - path: Vehicle.Speed
+    vss_type: float
+    class: measured
+
+  - path: Vehicle.Chassis.Longitudinal.AccelTarget
+    vss_type: float
+    class: target
+
+  - path: Vehicle.Chassis.Longitudinal.AccelTarget.Ack
+    vss_type: struct
+    class: ack
+
+  - path: Vehicle.Chassis.Longitudinal.AccelState
+    vss_type: float
+    class: state
+
+  - path: Vehicle.Chassis.Lateral.SteeringAngleTarget
+    vss_type: float
+    class: target
+
+  - path: Vehicle.Chassis.Lateral.SteeringAngleTarget.Ack
+    vss_type: struct
+    class: ack
+
+  - path: Vehicle.Chassis.Lateral.SteeringAngleState
+    vss_type: float
+    class: state

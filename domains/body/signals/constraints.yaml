@@ -1,0 +1,17 @@
+defaults:
+  slice: control
+  domain: body
+
+overrides:
+  Vehicle.Body.Door.FrontLeft.IsOpen:
+    slice: data
+
+  Vehicle.Body.Door.FrontLeft.IsLocked:
+    slice: control
+
+  Vehicle.Body.Door.FrontLeft.LockTarget:
+    slice: control
+    ack_required: true
+
+  Vehicle.Body.Door.FrontLeft.LockTarget.Ack:
+    slice: control

@@ -1,0 +1,16 @@
+signals:
+  - path: Vehicle.Body.Door.FrontLeft.IsOpen
+    vss_type: bool
+    class: measured
+
+  - path: Vehicle.Body.Door.FrontLeft.IsLocked
+    vss_type: bool
+    class: state
+
+  - path: Vehicle.Body.Door.FrontLeft.LockTarget
+    vss_type: enum
+    class: target
+
+  - path: Vehicle.Body.Door.FrontLeft.LockTarget.Ack
+    vss_type: struct
+    class: ack

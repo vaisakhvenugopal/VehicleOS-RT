@@ -1,0 +1,30 @@
+defaults:
+  slice: control
+  domain: cabin
+
+overrides:
+  Vehicle.Cabin.HVAC.CabinTemperature:
+    slice: data
+    min: -40.0
+    max: 80.0
+
+  Vehicle.Cabin.HVAC.TargetTemperature:
+    slice: control
+    min: 16.0
+    max: 30.0
+    ack_required: true
+
+  Vehicle.Cabin.HVAC.TargetTemperature.Ack:
+    slice: control
+
+  Vehicle.Cabin.HVAC.TargetTemperature.State:
+    slice: control
+
+  Vehicle.Cabin.Precondition.Request:
+    slice: control
+
+  Vehicle.Cabin.Precondition.State:
+    slice: control
+
+  Vehicle.Cabin.Precondition.Response:
+    slice: control

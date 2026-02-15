@@ -1,0 +1,33 @@
+defaults:
+  slice: control
+  domain: powertrain
+
+overrides:
+  Vehicle.Speed:
+    slice: data
+    min: 0.0
+    max: 70.0
+
+  Vehicle.Chassis.Longitudinal.AccelTarget:
+    slice: control
+    min: -3.0
+    max: 3.0
+    ack_required: true
+
+  Vehicle.Chassis.Longitudinal.AccelTarget.Ack:
+    slice: control
+
+  Vehicle.Chassis.Longitudinal.AccelState:
+    slice: control
+
+  Vehicle.Chassis.Lateral.SteeringAngleTarget:
+    slice: control
+    min: -30.0
+    max: 30.0
+    ack_required: true
+
+  Vehicle.Chassis.Lateral.SteeringAngleTarget.Ack:
+    slice: control
+
+  Vehicle.Chassis.Lateral.SteeringAngleState:
+    slice: control

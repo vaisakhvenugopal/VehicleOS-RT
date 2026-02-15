@@ -1,0 +1,28 @@
+signals:
+  - path: Vehicle.Cabin.HVAC.CabinTemperature
+    vss_type: float
+    class: measured
+
+  - path: Vehicle.Cabin.HVAC.TargetTemperature
+    vss_type: float
+    class: target
+
+  - path: Vehicle.Cabin.HVAC.TargetTemperature.Ack
+    vss_type: struct
+    class: ack
+
+  - path: Vehicle.Cabin.HVAC.TargetTemperature.State
+    vss_type: float
+    class: state
+
+  - path: Vehicle.Cabin.Precondition.Request
+    vss_type: struct
+    class: procedure.request
+
+  - path: Vehicle.Cabin.Precondition.State
+    vss_type: uint32
+    class: procedure.state
+
+  - path: Vehicle.Cabin.Precondition.Response
+    vss_type: struct
+    class: procedure.response
