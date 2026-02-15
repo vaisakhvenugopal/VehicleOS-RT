@@ -1,382 +1,403 @@
-The target system is: Generic - 3.7.0 - x86
+The target system is: Generic - 3.7.0 - arm
 The host system is: Linux - 6.12.67-linuxkit - aarch64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/gcc 
+Compiler: /opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
 Build flags: 
-Id flags:  
+Id flags: -c 
 
 The output was:
 0
 
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
 
-The C compiler identification is GNU, found in "/work/VehicleOS-RT/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/work/VehicleOS-RT/build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.o"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/gcc 
+Compiler: /opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
 Build flags: 
-Id flags:  
+Id flags: -c 
 
 The output was:
 0
 
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
 
-The CXX compiler identification is GNU, found in "/work/VehicleOS-RT/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/work/VehicleOS-RT/build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.o"
 
 Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-gcc (Ubuntu 11.4.0-1ubuntu1~22.04.2) 11.4.0
-Copyright (C) 2021 Free Software Foundation, Inc.
+arm-zephyr-eabi-gcc (Zephyr SDK 0.16.8) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Performing C SOURCE FILE Test check_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_cf72f && [1/2] Building C object CMakeFiles/cmTC_cf72f.dir/src.c.obj
-[2/2] Linking C executable cmTC_cf72f
+Run Build Command(s):/usr/bin/ninja cmTC_24615 && [1/2] Building C object CMakeFiles/cmTC_24615.dir/src.c.obj
+[2/2] Linking C executable cmTC_24615
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__ succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0_ succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_ce91f && [1/2] Building C object CMakeFiles/cmTC_ce91f.dir/src.c.obj
-[2/2] Linking C executable cmTC_ce91f
+Run Build Command(s):/usr/bin/ninja cmTC_fd644 && [1/2] Building C object CMakeFiles/cmTC_fd644.dir/src.c.obj
+[2/2] Linking C executable cmTC_fd644
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wall_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wall_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_041d2 && [1/2] Building C object CMakeFiles/cmTC_041d2.dir/src.c.obj
-[2/2] Linking C executable cmTC_041d2
+Run Build Command(s):/usr/bin/ninja cmTC_82fcc && [1/2] Building C object CMakeFiles/cmTC_82fcc.dir/src.c.obj
+[2/2] Linking C executable cmTC_82fcc
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wformat__Wformat_security_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wformat__Wformat_security_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_d485e && [1/2] Building C object CMakeFiles/cmTC_d485e.dir/src.c.obj
-[2/2] Linking C executable cmTC_d485e
+Run Build Command(s):/usr/bin/ninja cmTC_19d88 && [1/2] Building C object CMakeFiles/cmTC_19d88.dir/src.c.obj
+[2/2] Linking C executable cmTC_19d88
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wformat__Wformat_zero_length_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wformat__Wformat_zero_length_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_4f241 && [1/2] Building C object CMakeFiles/cmTC_4f241.dir/src.c.obj
-[2/2] Linking C executable cmTC_4f241
+Run Build Command(s):/usr/bin/ninja cmTC_ef4af && [1/2] Building C object CMakeFiles/cmTC_ef4af.dir/src.c.obj
+[2/2] Linking C executable cmTC_ef4af
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wdouble_promotion_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wdouble_promotion_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fa9ad && [1/2] Building C object CMakeFiles/cmTC_fa9ad.dir/src.c.obj
-[2/2] Linking C executable cmTC_fa9ad
+Run Build Command(s):/usr/bin/ninja cmTC_b183d && [1/2] Building C object CMakeFiles/cmTC_b183d.dir/src.c.obj
+[2/2] Linking C executable cmTC_b183d
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wpointer_sign_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wpointer_sign_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_14473 && [1/2] Building C object CMakeFiles/cmTC_14473.dir/src.c.obj
-[2/2] Linking C executable cmTC_14473
+Run Build Command(s):/usr/bin/ninja cmTC_110ef && [1/2] Building C object CMakeFiles/cmTC_110ef.dir/src.c.obj
+[2/2] Linking C executable cmTC_110ef
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wpointer_arith_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wpointer_arith_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f1700 && [1/2] Building C object CMakeFiles/cmTC_f1700.dir/src.c.obj
-[2/2] Linking C executable cmTC_f1700
+Run Build Command(s):/usr/bin/ninja cmTC_f3459 && [1/2] Building C object CMakeFiles/cmTC_f3459.dir/src.c.obj
+[2/2] Linking C executable cmTC_f3459
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wexpansion_to_defined_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_aad6b && [1/2] Building C object CMakeFiles/cmTC_aad6b.dir/src.c.obj
-[2/2] Linking C executable cmTC_aad6b
+Run Build Command(s):/usr/bin/ninja cmTC_736eb && [1/2] Building C object CMakeFiles/cmTC_736eb.dir/src.c.obj
+[2/2] Linking C executable cmTC_736eb
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wlogical_op_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wlogical_op_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b5831 && [1/2] Building C object CMakeFiles/cmTC_b5831.dir/src.c.obj
-[2/2] Linking C executable cmTC_b5831
+Run Build Command(s):/usr/bin/ninja cmTC_7dbc0 && [1/2] Building C object CMakeFiles/cmTC_7dbc0.dir/src.c.obj
+[2/2] Linking C executable cmTC_7dbc0
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wmissing_field_initializers_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5b4d5 && [1/2] Building C object CMakeFiles/cmTC_5b4d5.dir/src.c.obj
-[2/2] Linking C executable cmTC_5b4d5
+Run Build Command(s):/usr/bin/ninja cmTC_f76ac && [1/2] Building C object CMakeFiles/cmTC_f76ac.dir/src.c.obj
+[2/2] Linking C executable cmTC_f76ac
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wpacked_bitfield_compat_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e8d67 && [1/2] Building C object CMakeFiles/cmTC_e8d67.dir/src.c.obj
-[2/2] Linking C executable cmTC_e8d67
+Run Build Command(s):/usr/bin/ninja cmTC_ca0b8 && [1/2] Building C object CMakeFiles/cmTC_ca0b8.dir/src.c.obj
+[2/2] Linking C executable cmTC_ca0b8
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wvla_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wvla_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_479c2 && [1/2] Building C object CMakeFiles/cmTC_479c2.dir/src.c.obj
-[2/2] Linking C executable cmTC_479c2
+Run Build Command(s):/usr/bin/ninja cmTC_93356 && [1/2] Building C object CMakeFiles/cmTC_93356.dir/src.c.obj
+[2/2] Linking C executable cmTC_93356
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Wunused_but_set_variable_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_77683 && [1/2] Building C object CMakeFiles/cmTC_77683.dir/src.c.obj
-[2/2] Linking C executable cmTC_77683
+Run Build Command(s):/usr/bin/ninja cmTC_68bbe && [1/2] Building C object CMakeFiles/cmTC_68bbe.dir/src.c.obj
+[2/2] Linking C executable cmTC_68bbe
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_Werror_implicit_int_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_Werror_implicit_int_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7a21d && [1/2] Building C object CMakeFiles/cmTC_7a21d.dir/src.c.obj
-[2/2] Linking C executable cmTC_7a21d
+Run Build Command(s):/usr/bin/ninja cmTC_e1d8d && [1/2] Building C object CMakeFiles/cmTC_e1d8d.dir/src.c.obj
+[2/2] Linking C executable cmTC_e1d8d
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_mstack_protector_guard_global_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_mstack_protector_guard_global_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_20875 && [1/2] Building C object CMakeFiles/cmTC_20875.dir/src.c.obj
-[2/2] Linking C executable cmTC_20875
+Run Build Command(s):/usr/bin/ninja cmTC_8a89a && [1/2] Building C object CMakeFiles/cmTC_8a89a.dir/src.c.obj
+[2/2] Linking C executable cmTC_8a89a
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fno_freestanding_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fno_freestanding_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b7ca3 && [1/2] Building C object CMakeFiles/cmTC_b7ca3.dir/src.c.obj
-[2/2] Linking C executable cmTC_b7ca3
+Run Build Command(s):/usr/bin/ninja cmTC_74fa0 && [1/2] Building C object CMakeFiles/cmTC_74fa0.dir/src.c.obj
+[2/2] Linking C executable cmTC_74fa0
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_ffreestanding_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_ffreestanding_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0238c && [1/2] Building C object CMakeFiles/cmTC_0238c.dir/src.c.obj
-[2/2] Linking C executable cmTC_0238c
+Run Build Command(s):/usr/bin/ninja cmTC_0efa3 && [1/2] Building C object CMakeFiles/cmTC_0efa3.dir/src.c.obj
+[2/2] Linking C executable cmTC_0efa3
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_gdwarf_4_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_gdwarf_4_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_b1fb7 && [1/2] Building C object CMakeFiles/cmTC_b1fb7.dir/src.c.obj
-[2/2] Linking C executable cmTC_b1fb7
+Run Build Command(s):/usr/bin/ninja cmTC_34bcb && [1/2] Building C object CMakeFiles/cmTC_34bcb.dir/src.c.obj
+[2/2] Linking C executable cmTC_34bcb
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C___Wl___print_memory_usage succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___print_memory_usage succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5097f && [1/2] Building C object CMakeFiles/cmTC_5097f.dir/src.c.obj
-[2/2] Linking C executable cmTC_5097f
+Run Build Command(s):/usr/bin/ninja cmTC_387a9 && [1/2] Building C object CMakeFiles/cmTC_387a9.dir/src.c.obj
+[2/2] Linking C executable cmTC_387a9
 Memory region         Used Size  Region Size  %age Used
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C___pg succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__pg succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_43f23 && [1/2] Building C object CMakeFiles/cmTC_43f23.dir/src.c.obj
-[2/2] Linking C executable cmTC_43f23
+Run Build Command(s):/usr/bin/ninja cmTC_6f1de && [1/2] Building C object CMakeFiles/cmTC_6f1de.dir/src.c.obj
+[2/2] Linking C executable cmTC_6f1de
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl___gc_sections succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mcpu_cortex_m3__mthumb__mabi_aapcs__mfp16_format_ieee__mtp_soft succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8fd6e && [1/2] Building C object CMakeFiles/cmTC_8fd6e.dir/src.c.obj
-[2/2] Linking C executable cmTC_8fd6e
+Run Build Command(s):/usr/bin/ninja cmTC_98ced && [1/2] Building C object CMakeFiles/cmTC_98ced.dir/src.c.obj
+[2/2] Linking C executable cmTC_98ced
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl___build_id_none succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___gc_sections succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f7c0b && [1/2] Building C object CMakeFiles/cmTC_f7c0b.dir/src.c.obj
-[2/2] Linking C executable cmTC_f7c0b
+Run Build Command(s):/usr/bin/ninja cmTC_dc863 && [1/2] Building C object CMakeFiles/cmTC_dc863.dir/src.c.obj
+[2/2] Linking C executable cmTC_dc863
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl___sort_common_descending succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___build_id_none succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_de4b1 && [1/2] Building C object CMakeFiles/cmTC_de4b1.dir/src.c.obj
-[2/2] Linking C executable cmTC_de4b1
+Run Build Command(s):/usr/bin/ninja cmTC_e62ab && [1/2] Building C object CMakeFiles/cmTC_e62ab.dir/src.c.obj
+[2/2] Linking C executable cmTC_e62ab
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl___sort_section_alignment succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_common_descending succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e52bb && [1/2] Building C object CMakeFiles/cmTC_e52bb.dir/src.c.obj
-[2/2] Linking C executable cmTC_e52bb
+Run Build Command(s):/usr/bin/ninja cmTC_3ecd7 && [1/2] Building C object CMakeFiles/cmTC_3ecd7.dir/src.c.obj
+[2/2] Linking C executable cmTC_3ecd7
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__nostdlib succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_section_alignment succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_af8ec && [1/2] Building C object CMakeFiles/cmTC_af8ec.dir/src.c.obj
-[2/2] Linking C executable cmTC_af8ec
-/usr/bin/ld: warning: cannot find entry symbol _start; defaulting to 00000000000002b4
+Run Build Command(s):/usr/bin/ninja cmTC_19e2d && [1/2] Building C object CMakeFiles/cmTC_19e2d.dir/src.c.obj
+[2/2] Linking C executable cmTC_19e2d
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__static succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__nostdlib succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_f6ccc && [1/2] Building C object CMakeFiles/cmTC_f6ccc.dir/src.c.obj
-[2/2] Linking C executable cmTC_f6ccc
+Run Build Command(s):/usr/bin/ninja cmTC_4e0b2 && [1/2] Building C object CMakeFiles/cmTC_4e0b2.dir/src.c.obj
+[2/2] Linking C executable cmTC_4e0b2
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl__X succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__static succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_34238 && [1/2] Building C object CMakeFiles/cmTC_34238.dir/src.c.obj
-[2/2] Linking C executable cmTC_34238
+Run Build Command(s):/usr/bin/ninja cmTC_83432 && [1/2] Building C object CMakeFiles/cmTC_83432.dir/src.c.obj
+[2/2] Linking C executable cmTC_83432
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_C__Wl___orphan_handling_warn succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__X succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_3fce8 && [1/2] Building C object CMakeFiles/cmTC_3fce8.dir/src.c.obj
-[2/2] Linking C executable cmTC_3fce8
-/usr/bin/ld: warning: orphan section `.note.ABI-tag' from `/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o' being placed in section `.note.ABI-tag'
-/usr/bin/ld: warning: orphan section `.rela.fini_array' from `/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o' being placed in section `.rela.dyn'
-/usr/bin/ld: warning: orphan section `.rela.init_array' from `/usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/Scrt1.o' being placed in section `.rela.dyn'
-/usr/bin/ld: warning: orphan section `.tm_clone_table' from `/usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o' being placed in section `.tm_clone_table'
-/usr/bin/ld: warning: orphan section `.tm_clone_table' from `/usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o' being placed in section `.tm_clone_table'
+Run Build Command(s):/usr/bin/ninja cmTC_4b798 && [1/2] Building C object CMakeFiles/cmTC_4b798.dir/src.c.obj
+[2/2] Linking C executable cmTC_4b798
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fno_asynchronous_unwind_tables_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__N succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_7629e && [1/2] Building C object CMakeFiles/cmTC_7629e.dir/src.c.obj
-[2/2] Linking C executable cmTC_7629e
+Run Build Command(s):/usr/bin/ninja cmTC_91ebc && [1/2] Building C object CMakeFiles/cmTC_91ebc.dir/src.c.obj
+[2/2] Linking C executable cmTC_91ebc
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fno_reorder_functions_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___orphan_handling_warn succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_caaa7 && [1/2] Building C object CMakeFiles/cmTC_caaa7.dir/src.c.obj
-[2/2] Linking C executable cmTC_caaa7
+Run Build Command(s):/usr/bin/ninja cmTC_434e8 && [1/2] Building C object CMakeFiles/cmTC_434e8.dir/src.c.obj
+[2/2] Linking C executable cmTC_434e8
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check__param_min_pagesize_0_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_48097 && [1/2] Building C object CMakeFiles/cmTC_48097.dir/src.c.obj
-[2/2] Linking C executable cmTC_48097
+Run Build Command(s):/usr/bin/ninja cmTC_5771b && [1/2] Building C object CMakeFiles/cmTC_5771b.dir/src.c.obj
+[2/2] Linking C executable cmTC_5771b
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fno_defer_pop_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_ftls_model_local_exec_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_29cf4 && [1/2] Building C object CMakeFiles/cmTC_29cf4.dir/src.c.obj
-[2/2] Linking C executable cmTC_29cf4
+Run Build Command(s):/usr/bin/ninja cmTC_8a486 && [1/2] Building C object CMakeFiles/cmTC_8a486.dir/src.c.obj
+[2/2] Linking C executable cmTC_8a486
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fmacro_prefix_map__work_VehicleOS_RT_app_vehicleos_rt_mvp_CMAKE_SOURCE_DIR_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fno_reorder_functions_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_d8f5b && [1/2] Building C object CMakeFiles/cmTC_d8f5b.dir/src.c.obj
-[2/2] Linking C executable cmTC_d8f5b
+Run Build Command(s):/usr/bin/ninja cmTC_cca9b && [1/2] Building C object CMakeFiles/cmTC_cca9b.dir/src.c.obj
+[2/2] Linking C executable cmTC_cca9b
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fmacro_prefix_map__work_zephyr_ZEPHYR_BASE_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check__param_min_pagesize_0_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_0a6a7 && [1/2] Building C object CMakeFiles/cmTC_0a6a7.dir/src.c.obj
-[2/2] Linking C executable cmTC_0a6a7
+Run Build Command(s):/usr/bin/ninja cmTC_e7161 && [1/2] Building C object CMakeFiles/cmTC_e7161.dir/src.c.obj
+[2/2] Linking C executable cmTC_e7161
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fmacro_prefix_map__work_WEST_TOPDIR_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fno_defer_pop_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_5a02e && [1/2] Building C object CMakeFiles/cmTC_5a02e.dir/src.c.obj
-[2/2] Linking C executable cmTC_5a02e
+Run Build Command(s):/usr/bin/ninja cmTC_c76b6 && [1/2] Building C object CMakeFiles/cmTC_c76b6.dir/src.c.obj
+[2/2] Linking C executable cmTC_c76b6
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_ffunction_sections_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fmacro_prefix_map__work_VehicleOS_RT_app_vehicleos_rt_mvp_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_a978f && [1/2] Building C object CMakeFiles/cmTC_a978f.dir/src.c.obj
-[2/2] Linking C executable cmTC_a978f
+Run Build Command(s):/usr/bin/ninja cmTC_74bee && [1/2] Building C object CMakeFiles/cmTC_74bee.dir/src.c.obj
+[2/2] Linking C executable cmTC_74bee
 
 
 Source file was:
 int main(void) { return 0; }
-Performing C SOURCE FILE Test check_fdata_sections_C_ succeeded with the following output:
+Performing C SOURCE FILE Test check_fmacro_prefix_map__work_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
 Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_654e6 && [1/2] Building C object CMakeFiles/cmTC_654e6.dir/src.c.obj
-[2/2] Linking C executable cmTC_654e6
+Run Build Command(s):/usr/bin/ninja cmTC_ca898 && [1/2] Building C object CMakeFiles/cmTC_ca898.dir/src.c.obj
+[2/2] Linking C executable cmTC_ca898
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map__work_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_96abb && [1/2] Building C object CMakeFiles/cmTC_96abb.dir/src.c.obj
+[2/2] Linking C executable cmTC_96abb
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffunction_sections_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_12d4a && [1/2] Building C object CMakeFiles/cmTC_12d4a.dir/src.c.obj
+[2/2] Linking C executable cmTC_12d4a
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fdata_sections_C__nostartfiles__nostdlib__isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /work/VehicleOS-RT/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_986c8 && [1/2] Building C object CMakeFiles/cmTC_986c8.dir/src.c.obj
+[2/2] Linking C executable cmTC_986c8
 
 
 Source file was:

@@ -1,3 +1,4 @@
+/opt/zephyr-sdk/cmake/zephyr/Kconfig
 /work/VehicleOS-RT/build/Kconfig/Kconfig.dts
 /work/VehicleOS-RT/build/Kconfig/Kconfig.modules
 /work/VehicleOS-RT/build/Kconfig/arch/Kconfig
@@ -55,9 +56,9 @@
 /work/zephyr/arch/xtensa/Kconfig
 /work/zephyr/boards/Kconfig
 /work/zephyr/boards/Kconfig.v2
-/work/zephyr/boards/qemu/x86/Kconfig
-/work/zephyr/boards/qemu/x86/Kconfig.defconfig
-/work/zephyr/boards/qemu/x86/Kconfig.qemu_x86
+/work/zephyr/boards/qemu/cortex_m3/Kconfig
+/work/zephyr/boards/qemu/cortex_m3/Kconfig.defconfig
+/work/zephyr/boards/qemu/cortex_m3/Kconfig.qemu_cortex_m3
 /work/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.defconfig
 /work/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.shield
 /work/zephyr/boards/shields/adafruit_data_logger/Kconfig.shield
@@ -170,7 +171,6 @@
 /work/zephyr/boards/shields/x_nucleo_iks01a3/Kconfig.shield
 /work/zephyr/boards/shields/x_nucleo_iks02a1/Kconfig.shield
 /work/zephyr/boards/shields/x_nucleo_iks4a1/Kconfig.shield
-/work/zephyr/cmake/toolchain/host/Kconfig
 /work/zephyr/drivers/Kconfig
 /work/zephyr/drivers/adc/Kconfig
 /work/zephyr/drivers/adc/Kconfig.ad559x

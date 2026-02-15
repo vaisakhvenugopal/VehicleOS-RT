@@ -1,20 +1,16 @@
 # 0 "/work/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/work/zephyr/boards/qemu/x86/qemu_x86.dts" 1
+# 1 "/work/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts" 1
 
 
 
 /dts-v1/;
 
-# 1 "/work/zephyr/dts/common/mem.h" 1 3 4
-# 7 "/work/zephyr/boards/qemu/x86/qemu_x86.dts" 2
-# 16 "/work/zephyr/boards/qemu/x86/qemu_x86.dts"
-# 1 "/work/zephyr/dts/x86/intel/atom.dtsi" 1 3 4
+# 1 "/work/zephyr/dts/arm/ti/lm3s6965.dtsi" 1 3 4
 
 
-
-
+# 1 "/work/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
 
 
 # 1 "/work/zephyr/dts/common/skeleton.dtsi" 1 3 4
@@ -25,9 +21,31 @@
  chosen { };
  aliases { };
 };
-# 8 "/work/zephyr/dts/x86/intel/atom.dtsi" 2 3 4
-# 1 "/work/zephyr/include/zephyr/dt-bindings/interrupt-controller/intel-ioapic.h" 1 3 4
-# 9 "/work/zephyr/dts/x86/intel/atom.dtsi" 2 3 4
+# 4 "/work/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
+
+/ {
+ soc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "simple-bus";
+  interrupt-parent = <&nvic>;
+  ranges;
+
+  nvic: interrupt-controller@e000e100 {
+   #address-cells = <1>;
+   compatible = "arm,v7m-nvic";
+   reg = <0xe000e100 0xc00>;
+   interrupt-controller;
+   #interrupt-cells = <2>;
+  };
+
+  systick: timer@e000e010 {
+   compatible = "arm,armv7m-systick";
+   reg = <0xe000e010 0x10>;
+  };
+ };
+};
+# 4 "/work/zephyr/dts/arm/ti/lm3s6965.dtsi" 2 3 4
 
 / {
  cpus {
@@ -36,186 +54,157 @@
 
   cpu@0 {
    device_type = "cpu";
-   compatible = "intel,x86";
-   d-cache-line-size = <64>;
+   compatible = "arm,cortex-m3";
    reg = <0>;
   };
-
  };
 
- intc: ioapic@fec00000 {
-  compatible = "intel,ioapic";
-  #address-cells = <1>;
-  #interrupt-cells = <3>;
-  reg = <0xfec00000 0x1000>;
-  interrupt-controller;
+ sram0: memory@20000000 {
+  compatible = "mmio-sram";
+  reg = <0x20000000 (64*1024)>;
  };
 
- intc_loapic: loapic@fee00000 {
-  compatible = "intel,loapic";
-  reg = <0xfee00000 0x1000>;
-  interrupt-controller;
-  #interrupt-cells = <3>;
-  #address-cells = <1>;
- };
-
- dram0: memory@0 {
-  device_type = "memory";
-  reg = <0 ((32) * 1024 * 1024)>;
+ sysclk: system-clock {
+  compatible = "fixed-clock";
+  clock-frequency = <12000000>;
+  #clock-cells = <0>;
  };
 
  soc {
-  #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "simple-bus";
-  ranges;
 
-  uart0: uart@3f8 {
-   compatible = "ns16550";
-   reg = <0x000003f8 0x100>;
-   io-mapped;
-   clock-frequency = <1843200>;
-   interrupts = <4 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   reg-shift = <0>;
+  flash-controller@400fd000 {
+   compatible = "ti,stellaris-flash-controller";
+   reg = <0x400fd000 0x1000>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+
+   flash0: flash@0 {
+    compatible = "soc-nv-flash";
+    reg = <0x00000000 (256*1024)>;
+   };
+  };
+
+  uart0: uart@4000c000 {
+   compatible = "ti,stellaris-uart";
+   reg = <0x4000c000 0x4c>;
+   clocks = <&sysclk>;
+   interrupts = <5 3>;
    status = "disabled";
   };
 
-  uart1: uart@2f8 {
-   compatible = "ns16550";
-   reg = <0x000002f8 0x100>;
-   io-mapped;
-   clock-frequency = <1843200>;
-   interrupts = <3 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   reg-shift = <0>;
+  uart1: uart@4000d000 {
+   compatible = "ti,stellaris-uart";
+   reg = <0x4000d000 0x4c>;
+   clocks = <&sysclk>;
+   interrupts = <6 3>;
    status = "disabled";
   };
 
-  hpet: hpet@fed00000 {
-   compatible = "intel,hpet";
-   reg = <0xfed00000 0x400>;
-   interrupts = <2 (0x00000000 | 0x00000000 | 0x00000000) 4>;
-   interrupt-parent = <&intc>;
-
+  uart2: uart@4000e000 {
+   compatible = "ti,stellaris-uart";
+   reg = <0x4000e000 0x4c>;
+   clocks = <&sysclk>;
+   interrupts = <33 3>;
    status = "disabled";
   };
 
-  rtc: counter: rtc@70 {
-   compatible = "motorola,mc146818";
-   reg = <0x70 0x0D 0x71 0x0D>;
-   interrupts = <8 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-   alarms-count = <1>;
-
-   status = "okay";
+  eth: ethernet@40048000 {
+   compatible = "ti,stellaris-ethernet";
+   reg = <0x40048000 0x3c>;
+   interrupts = <42 0>;
+   status = "disabled";
+   local-mac-address = [00 00 94 00 83 00];
   };
 
+  gpio0: gpio@40004000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40004000 0x1000>;
+   interrupts = <0 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <8>;
+  };
+
+  gpio1: gpio@40005000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40005000 0x1000>;
+   interrupts = <1 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <8>;
+  };
+
+  gpio2: gpio@40006000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40006000 0x1000>;
+   interrupts = <2 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <8>;
+  };
+
+  gpio3: gpio@40007000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40007000 0x1000>;
+   interrupts = <3 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <8>;
+  };
+
+  gpio4: gpio@40024000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40024000 0x1000>;
+   interrupts = <4 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <4>;
+  };
+
+  gpio5: gpio@40025000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40025000 0x1000>;
+   interrupts = <30 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <4>;
+  };
+
+  gpio6: gpio@40026000 {
+   compatible = "ti,stellaris-gpio";
+   reg = <0x40026000 0x1000>;
+   interrupts = <31 3>;
+   gpio-controller;
+   #gpio-cells = <2>;
+   ngpios = <2>;
+  };
  };
 };
-# 17 "/work/zephyr/boards/qemu/x86/qemu_x86.dts" 2
-# 1 "/work/zephyr/include/zephyr/dt-bindings/pcie/pcie.h" 1 3 4
-# 18 "/work/zephyr/boards/qemu/x86/qemu_x86.dts" 2
+
+&nvic {
+ arm,num-irq-priority-bits = <3>;
+};
+# 7 "/work/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts" 2
 
 / {
- model = "QEMU X86 emulator";
- compatible = "qemu,x86_emulator";
-
- flash0: flash@500000 {
-  compatible = "soc-nv-flash";
-  reg = <0x00500000 ((4096) * 1024)>;
- };
+ model = "QEMU Cortex-M3";
+ compatible = "ti,lm3s6965evb-qemu", "ti,lm3s6965";
 
  aliases {
   uart-0 = &uart0;
   uart-1 = &uart1;
-  eeprom-0 = &eeprom0;
-  eeprom-1 = &eeprom1;
-  rtc = &rtc;
+  uart-2 = &uart2;
  };
 
  chosen {
-  zephyr,sram = &dram0;
+  zephyr,sram = &sram0;
   zephyr,flash = &flash0;
   zephyr,console = &uart0;
-  zephyr,bt-hci = &bt_hci_uart;
   zephyr,shell-uart = &uart0;
+  zephyr,bt-hci = &bt_hci_uart;
   zephyr,uart-pipe = &uart1;
-  zephyr,bt-mon-uart = &uart1;
-  zephyr,code-partition = &slot0_partition;
-  zephyr,flash-controller = &sim_flash;
-  zephyr,ieee802154 = &ieee802154;
-  zephyr,canbus = &can0;
+  zephyr,bt-mon-uart = &uart2;
  };
-
- pcie0: pcie0 {
-  #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "pcie-controller";
-  acpi-hid = "PNP0A08";
-  ranges;
-
-  can0: can0 {
-   compatible = "kvaser,pcican";
-   status = "okay";
-   vendor-id = <0x10e8>;
-   device-id = <0x8406>;
-   interrupts = <11 (0x00000100 | 0x00008000 | 0x00002000) 3>;
-   interrupt-parent = <&intc>;
-
-   can-transceiver {
-    max-bitrate = <1000000>;
-   };
-  };
-
-  eth0: eth0 {
-   compatible = "intel,e1000";
-
-   vendor-id = <0x8086>;
-   device-id = <0x100e>;
-
-   interrupts = <11 (0x00000100 | 0x00000000 | 0x00000000) 3>;
-   interrupt-parent = <&intc>;
-
-   status = "okay";
-  };
- };
-
- sim_flash: sim_flash {
-  compatible = "zephyr,sim-flash";
-
-  #address-cells = <1>;
-  #size-cells = <1>;
-  erase-value = <0xff>;
-
-  flash_sim0: flash_sim@0 {
-   compatible = "soc-nv-flash";
-   reg = <0x00000000 ((1024) * 1024)>;
-
-   erase-block-size = <1024>;
-   write-block-size = <4>;
-  };
- };
-
- eeprom1: eeprom1 {
-  status = "okay";
-  compatible = "zephyr,emu-eeprom";
-  size = <((4) * 1024)>;
-  pagesize = <((8) * 1024)>;
-  partition = <&eepromemu_partition>;
-  rambuf;
- };
-
- eeprom0: eeprom0 {
-  status = "okay";
-  compatible = "zephyr,sim-eeprom";
-  size = <((4) * 1024)>;
- };
-
- ieee802154: ieee802154 {
-  compatible = "zephyr,ieee802154-uart-pipe";
- };
-
 };
 
 &uart0 {
@@ -226,6 +215,11 @@
 &uart1 {
  status = "okay";
  current-speed = <115200>;
+};
+
+&uart2 {
+ status = "okay";
+ current-speed = <115200>;
 
  bt_hci_uart: bt_hci_uart {
   compatible = "zephyr,bt-hci-uart";
@@ -233,39 +227,36 @@
  };
 };
 
-&hpet {
+&eth {
  status = "okay";
 };
 
-&flash_sim0 {
+&gpio0 {
+ status = "okay";
+};
 
- partitions {
-  compatible = "fixed-partitions";
-  #address-cells = <1>;
-  #size-cells = <1>;
+&gpio1 {
+ status = "okay";
+};
 
+&gpio2 {
+ status = "okay";
+};
 
+&gpio3 {
+ status = "okay";
+};
 
+&gpio4 {
+ status = "okay";
+};
 
+&gpio5 {
+ status = "okay";
+};
 
-  storage_partition: partition@1000 {
-   label = "storage";
-   reg = <0x00001000 0x00010000>;
-  };
-
-  slot0_partition: partition@11000 {
-   label = "image-0";
-   reg = <0x00011000 0x00010000>;
-  };
-  slot1_partition: partition@21000 {
-   label = "image-1";
-   reg = <0x00021000 0x00010000>;
-  };
-  eepromemu_partition: partition@31000 {
-   label = "eeprom-emu";
-   reg = <0x00031000 0x00010000>;
-  };
- };
+&gpio6 {
+ status = "okay";
 };
 # 0 "<command-line>" 2
 # 1 "/work/zephyr/misc/empty_file.c"

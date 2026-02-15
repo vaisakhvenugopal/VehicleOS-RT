@@ -1,11 +1,11 @@
 # VehicleOS-RT: MVP Build Steps for AI Agents (container + QEMU)
 
-**Purpose:** Provide deterministic, step-by-step instructions so an AI agent can build and run the MVP in a fresh “black repo” without local Zephyr installation.
+**Purpose:** Provide deterministic, step-by-step instructions so an AI agent can build and run the MVP in a fresh “black repo” without local Zephyr installation. This build uses **ARM QEMU only**.
 
 Assumptions:
 - Host is a MacBook with Docker Desktop or Podman available.
 - All builds happen inside container.
-- Runtime is QEMU (Zephyr’s qemu_x86 or qemu_cortex_m depending on chosen target).
+- Runtime is QEMU (Zephyr’s **qemu_cortex_m3** target only).
 
 ---
 
@@ -84,10 +84,10 @@ pip3 install -r zephyr/scripts/requirements.txt
 > The agent should include a minimal `west.yml` referencing Zephyr and required modules.
 
 ### 2.2 Verify toolchain
-For QEMU x86, GCC is enough.
+For QEMU Cortex-M3, use the Zephyr SDK.
 Confirm:
 ```bash
-west boards | head
+west boards | grep qemu_cortex_m3 | head
 ```
 
 ---
@@ -138,13 +138,16 @@ ls -la generated/signals
 Zephyr app at:
 - `app/vehicleos_rt_mvp/`
 
-### 4.2 Build command (QEMU x86 example)
+### 4.2 Build command (ARM QEMU only: Cortex-M3)
 Create `scripts/build_qemu.sh`:
 
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
-west build -s app/vehicleos_rt_mvp -b qemu_x86 -p auto
+export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
+
+west build -s app/vehicleos_rt_mvp -b qemu_cortex_m3 -p auto
 ```
 
 Run:
@@ -162,6 +165,8 @@ Create `scripts/run_qemu.sh`:
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
+export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 west build -t run
 ```
 
