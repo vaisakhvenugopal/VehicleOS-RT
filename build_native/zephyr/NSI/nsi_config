@@ -1,0 +1,13 @@
+NSI_NATIVE=1
+NSI_BUILD_OPTIONS:=
+NSI_BUILD_PATH:=/work/build_native/zephyr/NSI
+NSI_CC:=ccache /usr/bin/gcc
+NSI_OBJCOPY:=/usr/bin/objcopy
+NSI_EMBEDDED_CPU_SW:=/work/build_native/zephyr/zephyr.elf 
+NSI_EXE:=/work/build_native/zephyr/zephyr.exe
+NSI_EXTRA_SRCS:=/zephyr/drivers/entropy/fake_entropy_native_bottom.c /zephyr/drivers/ethernet/eth_native_posix_adapt.c /zephyr/drivers/serial/uart_native_ptty_bottom.c
+NSI_LINK_OPTIONS:=-T /zephyr/boards/native/common/natsim_linker_script.ld
+NSI_EXTRA_LIBS:=
+NSI_PATH:=/zephyr/scripts/native_simulator/
+NSI_N_CPUS:=1
+NSI_LOCALIZE_OPTIONS:=--localize-symbol=CONFIG_* 

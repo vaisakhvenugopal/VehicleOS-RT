@@ -1,16 +1,26 @@
 # 0 "/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts" 1
+# 1 "/zephyr/boards/native/native_posix/native_posix.dts" 1
+
+
+
+
+
+
+# 1 "/zephyr/boards/native/native_posix/../native_sim/native_sim.dts" 1
+
+
+
 
 
 
 /dts-v1/;
+# 1 "/zephyr/dts/posix/posix.dtsi" 1 3 4
 
-# 1 "/zephyr/dts/arm/ti/lm3s6965.dtsi" 1 3 4
 
 
-# 1 "/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
+
 
 
 # 1 "/zephyr/dts/common/skeleton.dtsi" 1 3 4
@@ -21,242 +31,270 @@
  chosen { };
  aliases { };
 };
-# 4 "/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
+# 8 "/zephyr/dts/posix/posix.dtsi" 2 3 4
+# 1 "/zephyr/dts/common/mem.h" 1 3 4
+# 9 "/zephyr/dts/posix/posix.dtsi" 2 3 4
+# 9 "/zephyr/boards/native/native_posix/../native_sim/native_sim.dts" 2
+# 1 "/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
+# 9 "/zephyr/include/zephyr/dt-bindings/adc/adc.h" 3 4
+# 1 "/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 1083 "/zephyr/include/zephyr/sys/util_loops.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
+# 1084 "/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
+# 19 "/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 162 "/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
+# 163 "/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 193 "/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
+# 194 "/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
+# 197 "/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+
+
+# 1 "/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
+# 200 "/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 10 "/zephyr/include/zephyr/dt-bindings/adc/adc.h" 2 3 4
+# 10 "/zephyr/boards/native/native_posix/../native_sim/native_sim.dts" 2
+# 1 "/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
+# 11 "/zephyr/boards/native/native_posix/../native_sim/native_sim.dts" 2
+# 1 "/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
+# 12 "/zephyr/boards/native/native_posix/../native_sim/native_sim.dts" 2
 
 / {
- soc {
-  #address-cells = <1>;
-  #size-cells = <1>;
-  compatible = "simple-bus";
-  interrupt-parent = <&nvic>;
-  ranges;
+ model = "Native Sim Board";
+ compatible = "zephyr,posix";
 
-  nvic: interrupt-controller@e000e100 {
-   #address-cells = <1>;
-   compatible = "arm,v7m-nvic";
-   reg = <0xe000e100 0xc00>;
-   interrupt-controller;
-   #interrupt-cells = <2>;
-  };
+ chosen {
+  zephyr,console = &uart0;
+  zephyr,shell-uart = &uart0;
+  zephyr,uart-mcumgr = &uart0;
+  zephyr,flash = &flash0;
+  zephyr,entropy = &rng;
+  zephyr,flash-controller = &flashcontroller0;
+  zephyr,display = &sdl_dc;
+  zephyr,canbus = &can_loopback0;
+  zephyr,code-partition = &slot0_partition;
+  zephyr,bt-hci = &bt_hci_userchan;
+ };
 
-  systick: timer@e000e010 {
-   compatible = "arm,armv7m-systick";
-   reg = <0xe000e010 0x10>;
+ aliases {
+  eeprom-0 = &eeprom0;
+  i2c-0 = &i2c0;
+  spi-0 = &spi0;
+  led0 = &led0;
+  rtc = &rtc;
+ };
+
+ leds {
+  compatible = "gpio-leds";
+  led0: led_0 {
+   gpios = <&gpio0 0 (0 << 0)>;
+   label = "Green LED";
   };
  };
-};
-# 4 "/zephyr/dts/arm/ti/lm3s6965.dtsi" 2 3 4
 
-/ {
+ lvgl_pointer {
+  compatible = "zephyr,lvgl-pointer-input";
+  input = <&input_sdl_touch>;
+ };
+
  cpus {
   #address-cells = <1>;
   #size-cells = <0>;
 
-  cpu@0 {
-   device_type = "cpu";
-   compatible = "arm,cortex-m3";
+  cpu0: cpu@0 {
+   compatible = "zephyr,native-posix-cpu";
    reg = <0>;
   };
  };
 
- sram0: memory@20000000 {
-  compatible = "mmio-sram";
-  reg = <0x20000000 (64*1024)>;
- };
+ flashcontroller0: flash-controller@0 {
+  compatible = "zephyr,sim-flash";
+  reg = <0x00000000 ((2048) * 1024)>;
 
- sysclk: system-clock {
-  compatible = "fixed-clock";
-  clock-frequency = <12000000>;
-  #clock-cells = <0>;
- };
+  #address-cells = <1>;
+  #size-cells = <1>;
+  erase-value = <0xff>;
 
- soc {
+  flash0: flash@0 {
+   status = "okay";
+   compatible = "soc-nv-flash";
+   erase-block-size = <4096>;
+   write-block-size = <1>;
+   reg = <0x00000000 ((2048) * 1024)>;
 
-  flash-controller@400fd000 {
-   compatible = "ti,stellaris-flash-controller";
-   reg = <0x400fd000 0x1000>;
-   #address-cells = <1>;
-   #size-cells = <1>;
+   partitions {
+    compatible = "fixed-partitions";
+    #address-cells = <1>;
+    #size-cells = <1>;
 
-   flash0: flash@0 {
-    compatible = "soc-nv-flash";
-    reg = <0x00000000 (256*1024)>;
+    boot_partition: partition@0 {
+     label = "mcuboot";
+     reg = <0x00000000 0x0000C000>;
+    };
+    slot0_partition: partition@c000 {
+     label = "image-0";
+     reg = <0x0000C000 0x00069000>;
+    };
+    slot1_partition: partition@75000 {
+     label = "image-1";
+     reg = <0x00075000 0x00069000>;
+    };
+    scratch_partition: partition@de000 {
+     label = "image-scratch";
+     reg = <0x000de000 0x0001e000>;
+    };
+    storage_partition: partition@fc000 {
+     label = "storage";
+     reg = <0x000fc000 0x00004000>;
+    };
    };
   };
-
-  uart0: uart@4000c000 {
-   compatible = "ti,stellaris-uart";
-   reg = <0x4000c000 0x4c>;
-   clocks = <&sysclk>;
-   interrupts = <5 3>;
-   status = "disabled";
-  };
-
-  uart1: uart@4000d000 {
-   compatible = "ti,stellaris-uart";
-   reg = <0x4000d000 0x4c>;
-   clocks = <&sysclk>;
-   interrupts = <6 3>;
-   status = "disabled";
-  };
-
-  uart2: uart@4000e000 {
-   compatible = "ti,stellaris-uart";
-   reg = <0x4000e000 0x4c>;
-   clocks = <&sysclk>;
-   interrupts = <33 3>;
-   status = "disabled";
-  };
-
-  eth: ethernet@40048000 {
-   compatible = "ti,stellaris-ethernet";
-   reg = <0x40048000 0x3c>;
-   interrupts = <42 0>;
-   status = "disabled";
-   local-mac-address = [00 00 94 00 83 00];
-  };
-
-  gpio0: gpio@40004000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40004000 0x1000>;
-   interrupts = <0 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <8>;
-  };
-
-  gpio1: gpio@40005000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40005000 0x1000>;
-   interrupts = <1 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <8>;
-  };
-
-  gpio2: gpio@40006000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40006000 0x1000>;
-   interrupts = <2 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <8>;
-  };
-
-  gpio3: gpio@40007000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40007000 0x1000>;
-   interrupts = <3 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <8>;
-  };
-
-  gpio4: gpio@40024000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40024000 0x1000>;
-   interrupts = <4 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <4>;
-  };
-
-  gpio5: gpio@40025000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40025000 0x1000>;
-   interrupts = <30 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <4>;
-  };
-
-  gpio6: gpio@40026000 {
-   compatible = "ti,stellaris-gpio";
-   reg = <0x40026000 0x1000>;
-   interrupts = <31 3>;
-   gpio-controller;
-   #gpio-cells = <2>;
-   ngpios = <2>;
-  };
- };
-};
-
-&nvic {
- arm,num-irq-priority-bits = <3>;
-};
-# 7 "/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts" 2
-
-/ {
- model = "QEMU Cortex-M3";
- compatible = "ti,lm3s6965evb-qemu", "ti,lm3s6965";
-
- aliases {
-  uart-0 = &uart0;
-  uart-1 = &uart1;
-  uart-2 = &uart2;
  };
 
- chosen {
-  zephyr,sram = &sram0;
-  zephyr,flash = &flash0;
-  zephyr,console = &uart0;
-  zephyr,shell-uart = &uart0;
-  zephyr,bt-hci = &bt_hci_uart;
-  zephyr,uart-pipe = &uart1;
-  zephyr,bt-mon-uart = &uart2;
+ eeprom0: eeprom {
+  status = "okay";
+  compatible = "zephyr,sim-eeprom";
+  size = <((32) * 1024)>;
  };
-};
 
-&uart0 {
- status = "okay";
- current-speed = <115200>;
-};
+ i2c0: i2c@100 {
+  status = "okay";
+  compatible = "zephyr,i2c-emul-controller";
+  clock-frequency = <100000>;
+  #address-cells = <1>;
+  #size-cells = <0>;
+  reg = <0x100 4>;
+ };
 
-&uart1 {
- status = "okay";
- current-speed = <115200>;
-};
+ spi0: spi@200 {
+  status = "okay";
+  compatible = "zephyr,spi-emul-controller";
+  clock-frequency = <50000000>;
+  #address-cells = <1>;
+  #size-cells = <0>;
+  reg = <0x200 4>;
+ };
 
-&uart2 {
- status = "okay";
- current-speed = <115200>;
+ espi0: espi@300 {
+  status = "okay";
+  compatible = "zephyr,espi-emul-controller";
+  reg = <0x300 4>;
+  #address-cells = <1>;
+  #size-cells = <0>;
+ };
 
- bt_hci_uart: bt_hci_uart {
-  compatible = "zephyr,bt-hci-uart";
+ mspi0: mspi@400 {
+  status = "okay";
+  compatible = "zephyr,mspi-emul-controller";
+  clock-frequency = <250000000>;
+  reg = <0x400 4>;
+  #address-cells = <1>;
+  #size-cells = <0>;
+ };
+
+ uart0: uart {
+  status = "okay";
+  compatible = "zephyr,native-posix-uart";
+
+
+
+  current-speed = <0>;
+ };
+
+ uart1: uart_1 {
+  status = "okay";
+  compatible = "zephyr,native-posix-uart";
+
+
+
+  current-speed = <0>;
+ };
+
+ rng: rng {
+  status = "okay";
+  compatible = "zephyr,native-posix-rng";
+ };
+
+ counter0: counter {
+  status = "okay";
+  compatible = "zephyr,native-posix-counter";
+ };
+
+ gpio0: gpio_emul {
+  status = "okay";
+  compatible = "zephyr,gpio-emul";
+  rising-edge;
+  falling-edge;
+  high-level;
+  low-level;
+  gpio-controller;
+  #gpio-cells = <2>;
+ };
+
+ zephyr_udc0: udc0 {
+  compatible = "zephyr,native-posix-udc";
+ };
+
+ sdl_dc: sdl_dc {
+  compatible = "zephyr,sdl-dc";
+  height = <240>;
+  width = <320>;
+ };
+
+ input_sdl_touch: input-sdl-touch {
+  compatible = "zephyr,input-sdl-touch";
+ };
+
+ can_loopback0: can_loopback0 {
+  status = "okay";
+  compatible = "zephyr,can-loopback";
+ };
+
+ can0: can {
+  status = "disabled";
+  compatible = "zephyr,native-linux-can";
+
+
+
+  host-interface = "zcan0";
+ };
+
+ rtc: rtc {
+  status = "okay";
+  compatible = "zephyr,rtc-emul";
+  alarms-count = <2>;
+ };
+
+ adc0: adc {
+  compatible = "zephyr,adc-emul";
+  nchannels = <2>;
+  #io-channel-cells = <1>;
+  status = "okay";
+ };
+
+ dma: dma {
+  compatible = "zephyr,dma-emul";
+  #dma-cells = <1>;
+  stack-size = <4096>;
+ };
+
+ bt_hci_userchan: bt_hci_userchan {
+  compatible = "zephyr,bt-hci-userchan";
   status = "okay";
  };
 };
-
-&eth {
- status = "okay";
-};
-
-&gpio0 {
- status = "okay";
-};
-
-&gpio1 {
- status = "okay";
-};
-
-&gpio2 {
- status = "okay";
-};
-
-&gpio3 {
- status = "okay";
-};
-
-&gpio4 {
- status = "okay";
-};
-
-&gpio5 {
- status = "okay";
-};
-
-&gpio6 {
- status = "okay";
-};
+# 8 "/zephyr/boards/native/native_posix/native_posix.dts" 2
 # 0 "<command-line>" 2
 # 1 "/zephyr/misc/empty_file.c"

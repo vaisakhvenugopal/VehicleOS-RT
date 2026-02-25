@@ -1,4 +1,16 @@
 empty_file.o: /zephyr/misc/empty_file.c \
- /zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts \
- /zephyr/dts/arm/ti/lm3s6965.dtsi /zephyr/dts/arm/armv7-m.dtsi \
- /zephyr/dts/common/skeleton.dtsi
+ /zephyr/boards/native/native_posix/native_posix.dts \
+ /zephyr/boards/native/native_posix/../native_sim/native_sim.dts \
+ /zephyr/dts/posix/posix.dtsi /zephyr/dts/common/skeleton.dtsi \
+ /zephyr/dts/common/mem.h /zephyr/include/zephyr/dt-bindings/adc/adc.h \
+ /zephyr/include/zephyr/dt-bindings/dt-util.h \
+ /zephyr/include/zephyr/sys/util_macro.h \
+ /zephyr/include/zephyr/sys/util_internal.h \
+ /zephyr/include/zephyr/sys/util_loops.h \
+ /zephyr/include/zephyr/sys/util_listify.h \
+ /zephyr/include/zephyr/sys/util_internal_is_eq.h \
+ /zephyr/include/zephyr/sys/util_internal_util_inc.h \
+ /zephyr/include/zephyr/sys/util_internal_util_dec.h \
+ /zephyr/include/zephyr/sys/util_internal_util_x2.h \
+ /zephyr/include/zephyr/dt-bindings/i2c/i2c.h \
+ /zephyr/include/zephyr/dt-bindings/gpio/gpio.h

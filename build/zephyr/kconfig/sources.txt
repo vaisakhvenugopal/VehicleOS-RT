@@ -17,7 +17,6 @@
 /modules/hal/telink/tlsr9/Kconfig
 /modules/lib/gui/lvgl/Kconfig
 /modules/lib/picolibc/zephyr/Kconfig
-/opt/zephyr-sdk/cmake/zephyr/Kconfig
 /work/build/Kconfig/Kconfig.dts
 /work/build/Kconfig/Kconfig.modules
 /work/build/Kconfig/arch/Kconfig
@@ -56,9 +55,10 @@
 /zephyr/arch/xtensa/Kconfig
 /zephyr/boards/Kconfig
 /zephyr/boards/Kconfig.v2
-/zephyr/boards/qemu/cortex_m3/Kconfig
-/zephyr/boards/qemu/cortex_m3/Kconfig.defconfig
-/zephyr/boards/qemu/cortex_m3/Kconfig.qemu_cortex_m3
+/zephyr/boards/native/common/sdl/Kconfig
+/zephyr/boards/native/native_posix/Kconfig
+/zephyr/boards/native/native_posix/Kconfig.defconfig
+/zephyr/boards/native/native_posix/Kconfig.native_posix
 /zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.defconfig
 /zephyr/boards/shields/adafruit_2_8_tft_touch_v2/Kconfig.shield
 /zephyr/boards/shields/adafruit_data_logger/Kconfig.shield
@@ -171,6 +171,7 @@
 /zephyr/boards/shields/x_nucleo_iks01a3/Kconfig.shield
 /zephyr/boards/shields/x_nucleo_iks02a1/Kconfig.shield
 /zephyr/boards/shields/x_nucleo_iks4a1/Kconfig.shield
+/zephyr/cmake/toolchain/host/Kconfig
 /zephyr/drivers/Kconfig
 /zephyr/drivers/adc/Kconfig
 /zephyr/drivers/adc/Kconfig.ad559x
