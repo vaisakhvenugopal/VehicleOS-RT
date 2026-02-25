@@ -1,1 +1,0 @@
-"mcuboot":"/bootloader/mcuboot":"/bootloader/mcuboot/boot/zephyr/sysbuild"

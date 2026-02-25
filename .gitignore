@@ -1,0 +1,10 @@
+.DS_Store
+
+# Build outputs
+build/
+build_*/
+
+# West-managed deps (should live outside git history)
+zephyr/
+modules/
+bootloader/

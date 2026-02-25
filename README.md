@@ -10,7 +10,9 @@ This README focuses on getting the MVP app built and running (ARM QEMU only), ho
 - `scripts/`: Build/run helpers
 - `domains/`: VSS domain schemas and lambdas
 - `generated/`: Codegen outputs (signal registry)
-- `zephyr/`, `modules/`, `tools/`, `bootloader/`: West-managed dependencies and tooling
+- `platform/`: Store, policy, SDK, gateway, and CLI server
+- `tools/`: CLI client and codegen
+- `zephyr/`, `modules/`, `bootloader/`, `tools/net-tools/`: West-managed dependencies (created by `west update`, not tracked in git)
 
 ## Quick start (recommended: container + ARM QEMU)
 
@@ -33,7 +35,7 @@ bash docker/run.sh
 3. Initialize the Zephyr workspace (inside the container)
 
 ```bash
-west init -l .
+west init -l /work /work
 west update
 west zephyr-export
 pip3 install -r zephyr/scripts/requirements.txt
@@ -108,9 +110,26 @@ The demo runner `scripts/run_demo.sh` currently prints guidance only. The real i
 
 ## Troubleshooting
 
-- If `west update` fails, confirm `west.yml` is present and you ran `west init -l .` from the repo root.
+- If `west update` fails, confirm `west.yml` is present and you ran `west init -l /work /work` from the repo root inside the container.
 - If build fails due to missing signal headers, re-run `bash scripts/gen_signals.sh`.
 - If QEMU fails to run, ensure you built for `qemu_cortex_m3` as used in `scripts/build_qemu.sh` and that the Docker image was rebuilt after any Dockerfile changes.
+
+## CLI v2 (TCP, recommended for testing)
+
+For CLI v2, use the native simulator which exposes TCP `127.0.0.1:5555`:
+
+```bash
+west build -s app/vehicleos_rt_mvp -b native_sim/native/64 -p auto -d build_native
+west build -d build_native -t run
+```
+
+In another shell:
+
+```bash
+python3 tools/cli/vo_cli.py help
+python3 tools/cli/vo_cli.py domains
+python3 tools/cli/vo_cli.py ls vss.Vehicle.Cabin
+```
 
 ## Docs
 
