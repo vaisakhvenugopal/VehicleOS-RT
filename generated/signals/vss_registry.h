@@ -30,6 +30,7 @@ struct vss_signal_meta {
     vss_class_t class;
     vss_slice_t slice;
     vss_domain_t domain;
+    const char *owner;
     bool ack_required;
     bool has_min;
     double min;

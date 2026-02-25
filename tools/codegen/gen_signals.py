@@ -79,9 +79,13 @@ def generate(domains_dir, out_dir):
 
         vss_file = os.path.join(d_path, "signals", "vss.yaml")
         constraints_file = os.path.join(d_path, "signals", "constraints.yaml")
+        package_file = os.path.join(d_path, "signals", "package.yaml")
 
         vss_data = load_yaml(vss_file) or {}
         cons_data = load_yaml(constraints_file) or {}
+        pkg_data = load_yaml(package_file) or {}
+        owners = pkg_data.get("owners", []) or []
+        owner = owners[0] if owners else ""
 
         defaults = cons_data.get("defaults", {})
         overrides = cons_data.get("overrides", {})
@@ -97,6 +101,7 @@ def generate(domains_dir, out_dir):
                 "class": normalize_class(cls),
                 "slice": defaults.get("slice", "control"),
                 "domain": defaults.get("domain", domain),
+                "owner": owner,
                 "ack_required": False,
                 "min": None,
                 "max": None,
@@ -150,6 +155,7 @@ def generate(domains_dir, out_dir):
         f.write("    vss_class_t class;\n")
         f.write("    vss_slice_t slice;\n")
         f.write("    vss_domain_t domain;\n")
+        f.write("    const char *owner;\n")
         f.write("    bool ack_required;\n")
         f.write("    bool has_min;\n")
         f.write("    double min;\n")
@@ -172,6 +178,7 @@ def generate(domains_dir, out_dir):
             f.write(f"        .class = {class_to_enum(sig['class'])},\n")
             f.write(f"        .slice = {slice_to_enum(sig['slice'])},\n")
             f.write(f"        .domain = {domain_to_enum(sig['domain'])},\n")
+            f.write(f"        .owner = \"{sig['owner']}\",\n")
             f.write(f"        .ack_required = {'true' if sig['ack_required'] else 'false'},\n")
             f.write(f"        .has_min = {'true' if sig['min'] is not None else 'false'},\n")
             f.write(f"        .min = {sig['min'] if sig['min'] is not None else 0.0},\n")

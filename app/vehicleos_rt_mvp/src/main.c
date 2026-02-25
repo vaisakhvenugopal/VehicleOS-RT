@@ -8,6 +8,7 @@
 #include "domains/body/lambdas/body_lambdas.h"
 #include "domains/powertrain/lambdas/powertrain_lambdas.h"
 #include "tools/cli_client.h"
+#include "platform/tools/cli_server/cli_server.h"
 
 LOG_MODULE_REGISTER(vehicleos_main, LOG_LEVEL_INF);
 
@@ -35,6 +36,9 @@ int main(void)
 
     // 5. Init CLI client (stub)
     cli_client_init();
+
+    // 6. Init CLI server (TCP)
+    cli_server_init();
 
     LOG_INF("VehicleOS-RT MVP Ready. Waiting for commands...");
     

@@ -23,8 +23,10 @@ typedef struct {
 
 void store_init(void);
 int store_get(vss_handle_t handle, vss_value_t *out_value);
+int store_get_meta(vss_handle_t handle, vss_value_t *out_value, uint64_t *out_ts_ms, uint32_t *out_seq);
 int store_set(vss_handle_t handle, const vss_value_t *value);
 int store_publish(vss_handle_t handle, const vss_value_t *value);
+bool store_ack_pending(vss_handle_t handle);
 
 #ifdef __cplusplus
 }

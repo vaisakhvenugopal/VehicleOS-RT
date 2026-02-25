@@ -22,6 +22,7 @@ target_sources(app PRIVATE
   ../../domains/powertrain/lambdas/chassis_lateral_controller_sim.c
   ../../domains/powertrain/lambdas/powertrain_lambdas_init.c
   ../../tools/cli_client.c
+  ../../platform/tools/cli_server/cli_server.c
 )
 
 target_include_directories(app PRIVATE

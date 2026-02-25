@@ -1,6 +1,8 @@
 #include "platform/store/store.h"
 #include "platform/policy/policy.h"
+#include "platform/sdk/vo_sdk.h"
 #include <zephyr/logging/log.h>
+#include <zephyr/kernel.h>
 #include <string.h>
 #include <errno.h>
 
@@ -9,6 +11,8 @@ LOG_MODULE_REGISTER(vo_store, LOG_LEVEL_INF);
 typedef struct {
     bool has_value;
     vss_value_t value;
+    uint64_t ts_ms;
+    uint32_t seq;
 } store_slot_t;
 
 static store_slot_t g_store[VSS_SIGNAL_COUNT];
@@ -127,6 +131,24 @@ int store_get(vss_handle_t handle, vss_value_t *out_value)
     return 0;
 }
 
+int store_get_meta(vss_handle_t handle, vss_value_t *out_value, uint64_t *out_ts_ms, uint32_t *out_seq)
+{
+    if (handle < 0 || handle >= VSS_SIGNAL_COUNT || out_value == NULL) {
+        return -EINVAL;
+    }
+    if (!g_store[handle].has_value) {
+        return -ENOENT;
+    }
+    *out_value = g_store[handle].value;
+    if (out_ts_ms != NULL) {
+        *out_ts_ms = g_store[handle].ts_ms;
+    }
+    if (out_seq != NULL) {
+        *out_seq = g_store[handle].seq;
+    }
+    return 0;
+}
+
 int store_set(vss_handle_t handle, const vss_value_t *value)
 {
     int rc;
@@ -152,9 +174,12 @@ int store_set(vss_handle_t handle, const vss_value_t *value)
 
     g_store[handle].value = *value;
     g_store[handle].has_value = true;
+    g_store[handle].ts_ms = (uint64_t)k_uptime_get();
+    g_store[handle].seq++;
 
     LOG_INF("Set %s", vss_registry[handle].path);
     mark_ack_required(handle);
+    vo_notify_update(handle);
 
     return 0;
 }
@@ -184,12 +209,23 @@ int store_publish(vss_handle_t handle, const vss_value_t *value)
 
     g_store[handle].value = *value;
     g_store[handle].has_value = true;
+    g_store[handle].ts_ms = (uint64_t)k_uptime_get();
+    g_store[handle].seq++;
 
     LOG_INF("Publish %s", vss_registry[handle].path);
 
     if (vss_registry[handle].class == VSS_CLASS_ACK) {
         handle_ack_published(handle);
     }
+    vo_notify_update(handle);
 
     return 0;
+}
+
+bool store_ack_pending(vss_handle_t handle)
+{
+    if (handle < 0 || handle >= VSS_SIGNAL_COUNT) {
+        return false;
+    }
+    return g_ack_pending[handle];
 }
